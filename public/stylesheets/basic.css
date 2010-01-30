@@ -22,8 +22,8 @@ ul.horizontal_clean_list li                                           {float:lef
 
 ol.test {list-style-type: lower-alpha;}
 
-h1#header {text-align: center; background-color: #E9E9FF; border-bottom: 2px solid black;}
-
+#header {text-align: center; background-color: #E9E9FF; border-bottom: 2px solid black;}
+#header h1 h2{display:inline;float:left}
 li.correct{background-color: #FFF680}
 li.wrong{background-color: #BF8F60}
 

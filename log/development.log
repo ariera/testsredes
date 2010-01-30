@@ -6497,3 +6497,373 @@ Rendering test/show
   [4;35;1mAnswer Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
 Rendered test/_show (51.7ms)
 Completed in 93ms (View: 55, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:03:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.4ms)
+
+ActionView::TemplateError (wrong number of arguments) on line #10 of app/views/layouts/basic.erb:
+7:   <body>
+8:     <div class="container">
+9:       <h1 id="header" class="span-23">Teoría de Redes</h1>
+10:       <h2 class="span-1 last"> <%= link_to "nueva pregunta", :controller => test, :action => :new %></h2>
+11:       <div class="span-24 last">
+12:         <%= yield %>
+13:       </div>
+
+    app/views/layouts/basic.erb:10:in `test'
+    app/views/layouts/basic.erb:10
+
+Rendered rescues/_trace (241.5ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:04:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.5ms)
+Completed in 103ms (View: 67, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:04:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.6ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (126.6ms)
+Completed in 185ms (View: 145, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:04:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.6ms)
+Completed in 94ms (View: 54, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:05:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.5ms)
+Completed in 89ms (View: 54, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:05:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (5.3ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (52.3ms)
+Completed in 93ms (View: 54, DB: 8) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:05:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.0ms)
+Completed in 89ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:06:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.1ms)
+Completed in 102ms (View: 66, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:06:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.1ms)
+Completed in 123ms (View: 68, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:06:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.1ms)
+Completed in 99ms (View: 64, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:07:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.5ms)
+Completed in 100ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:08:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.4ms)
+Completed in 100ms (View: 65, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:09:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.0ms)
+Completed in 105ms (View: 67, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:09:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.8ms)
+Completed in 103ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:09:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.7ms)
+Completed in 101ms (View: 66, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:10:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.7ms)
+Completed in 103ms (View: 66, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:10:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.7ms)
+Completed in 176ms (View: 140, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:10:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.2ms)
+Completed in 99ms (View: 63, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:10:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.5ms)
+Completed in 100ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:11:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (1.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.0ms)
+Completed in 111ms (View: 68, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (5.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:11:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.1ms)
+Completed in 101ms (View: 65, DB: 10) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:11:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.5ms)
+Completed in 102ms (View: 66, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#new (for 127.0.0.1 at 2010-01-30 20:12:09) [GET]
+Rendering template within layouts/basic
+Rendering test/new
+Completed in 39ms (View: 27, DB: 0) | 200 OK [http://0.0.0.0/test/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#create (for 127.0.0.1 at 2010-01-30 20:14:28) [POST]
+  Parameters: {"answer4"=>"No se pueden distinguir varios protocolos de nivel 3", "commit"=>"crear", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>{"title"=>"¿Cómo se identifica el protocolo de nivel tres en una RAL que siga el estándar IEEE 802.3"}, "answer1"=>"Utilizando el campo longitud de la trama MAC", "correct1"=>"1", "answer2"=>"Madificando el formato de trama", "answer3"=>"Empleando los campos de dirección (SAP origen y destino) de la trama LLC"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Create (0.4ms)[0m   [0mINSERT INTO `questions` (`created_at`, `title`, `updated_at`) VALUES('2010-01-30 19:14:28', '¿Cómo se identifica el protocolo de nivel tres en una RAL que siga el estándar IEEE 802.3', '2010-01-30 19:14:28')[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(2, 1, '2010-01-30 19:14:28', 'Utilizando el campo longitud de la trama MAC', '2010-01-30 19:14:28')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(2, NULL, '2010-01-30 19:14:28', 'Madificando el formato de trama', '2010-01-30 19:14:28')[0m
+  [4;36;1mAnswer Create (0.2ms)[0m   [0;1mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(2, NULL, '2010-01-30 19:14:28', 'Empleando los campos de dirección (SAP origen y destino) de la trama LLC', '2010-01-30 19:14:28')[0m
+  [4;35;1mAnswer Create (0.4ms)[0m   [0mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(2, NULL, '2010-01-30 19:14:28', 'No se pueden distinguir varios protocolos de nivel 3', '2010-01-30 19:14:28')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/2
+Completed in 192ms (DB: 7) | 302 Found [http://0.0.0.0/test/create]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:14:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mQuestion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 2) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.0ms)
+Completed in 88ms (View: 53, DB: 5) | 200 OK [http://0.0.0.0/test/show/2]
