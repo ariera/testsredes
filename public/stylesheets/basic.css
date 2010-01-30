@@ -1,0 +1,50 @@
+
+.clearfix:after {content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+/* START_OF GENERAL **********************************************************/
+a {text-decoration:none; color:#0050AF;}
+a:hover, a:visited{color:#0050AF;}
+a:hover {text-decoration:underline}
+
+ul.clean_list {list-style-type:none}
+ul.clean_list li {padding:0px;margin:0px;position:relative;}
+ul.horizontal_clean_list li                                           {float:left; margin-right:10px;} /* same as a regular .span-x */
+
+ol.test {list-style-type: lower-alpha;}
+
+h1#header {text-align: center; background-color: #E9E9FF; border-bottom: 2px solid black;}
+
+li.correct{background-color: #FFF680}
+li.wrong{background-color: #BF8F60}
+
+h3 {padding:0px; margin: 0px; display:inline}
+
+/*
+azules
+#C9C8FF
+#6E6CBF
+#E9E9FF
+#9390FF
+
+naranjas
+#FFDFBF
+#BF8F60
+#FFF2E6
+#FFBF80
+
+amarillos
+#FFFBBF
+#BFB960
+#FFFDE6
+#FFF680
+*/

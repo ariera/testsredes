@@ -1,0 +1,22 @@
+<% form_for :question, :url => { :controller => "test", :action => "create" } do |f| %>
+  <p style="background-color: #EEE; font-weight: bold"> Enunciado:
+  <%= f.text_field :title, :size => 60 %></p>
+  <p> Respuesta 1:
+  <%= text_field_tag :answer1, '', :size => 58 %>
+  <%= check_box_tag 'correct1' %>
+  </p>
+  <p> Respuesta 2:
+  <%= text_field_tag :answer2, '', :size => 58 %>
+  <%= check_box_tag 'correct2' %>
+  </p>
+  <p> Respuesta 3:
+  <%= text_field_tag :answer3, '', :size => 58 %>
+  <%= check_box_tag 'correct3' %>
+  </p>
+  <p> Respuesta 4:
+  <%= text_field_tag :answer4, '', :size => 58 %>
+  <%= check_box_tag 'correct4' %>
+  </p>
+  <%= submit_tag "crear" %>
+
+<% end %>
