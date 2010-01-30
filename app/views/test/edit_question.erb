@@ -1,13 +1,17 @@
 <% form_for :question, :url => { :controller => "test", :action => "update_question" } do |f| %>
-  <p style="background-color: #EEE; font-weight: bold"> Enunciado:
-  <%= f.text_field :title, :size => 60 %></p>
+  <p style="background-color: #EEE; font-weight: bold">
+    Enunciado:<br/>
+    <%= f.text_area :title, :cols=> 60, :rows => 3, :style => "height:40px" %>
+  </p>
   <%= hidden_field_tag :question_id, @question.id %>
+  <ol>
+    <% @question.answers.each_with_index do |a,i| %>
 
-  <% @question.answers.each_with_index do |a,i| %>
-    <p> Respuesta <%= i+1 %>:
-    <%= text_field_tag "answer#{i+1}", a.title, :size => 58 %>
-    <%= check_box_tag  "correct#{i+1}", '', a.correct? %>
-    </p>
-  <% end -%>
+      <li>
+        <%= text_field_tag "answer#{i}", a.title, :size => 58 %>
+        <%= check_box_tag  "correct#{i}", '', a.correct? %>
+      </li>
+      <% end -%>
+  </ol>
   <%= submit_tag "actualizar" %>
 <% end %>

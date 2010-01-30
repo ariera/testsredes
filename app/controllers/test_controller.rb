@@ -14,6 +14,12 @@ class TestController < ApplicationController
   def update_question
     q=Question.find(params[:question_id])
     q.update_attribute(:title, params[:question][:title])
+
+    q.answers.each_with_index do |a,i|
+      a.update_attribute(:title, params["answer#{i}"])
+      a.update_attribute(:correct, params["correct#{i}"] ? true : false)
+    end
+
     redirect_to :action => :show, :id => q.id
   end
 

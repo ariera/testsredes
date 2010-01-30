@@ -5255,3 +5255,1245 @@ Rendering test/show
   [4;35;1mAnswer Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
 Rendered test/_show (159.3ms)
 Completed in 197ms (View: 163, DB: 4) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (223.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (167.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20100129150333)
+  [4;35;1mSQL (123.7ms)[0m   [0mCREATE TABLE `questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100129150333')[0m
+Migrating to CreateAnswers (20100129150512)
+  [4;35;1mSQL (104.3ms)[0m   [0mCREATE TABLE `answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `correct` bool, `question_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100129150512')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `answers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `answers`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `questions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `questions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:39:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Question with ID=1):
+  app/controllers/test_controller.rb:4:in `show'
+
+Rendered rescues/_trace (204.0ms)
+Rendered rescues/_request_and_response (76.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-30 19:39:08) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#new (for 127.0.0.1 at 2010-01-30 19:39:13) [GET]
+Rendering template within layouts/basic
+Rendering test/new
+Completed in 51ms (View: 40, DB: 0) | 200 OK [http://0.0.0.0/test/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#create (for 127.0.0.1 at 2010-01-30 19:42:19) [POST]
+  Parameters: {"answer4"=>"Las estaciones de la red con mayor prioridad disponende mayor ancho de banda", "commit"=>"crear", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>{"title"=>"En una red 10BaseT,"}, "answer1"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "answer2"=>"Las estaciones de la red disponen de 10Mbps compartidos entre todas", "answer3"=>"Las estaciones de la red gestionan su velocidad de acceso a la red"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Create (0.3ms)[0m   [0mINSERT INTO `questions` (`created_at`, `title`, `updated_at`) VALUES('2010-01-30 18:42:19', 'En una red 10BaseT,', '2010-01-30 18:42:19')[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(1, NULL, '2010-01-30 18:42:19', 'Cada una de las estaciones en la red dispone permanentemente de 10Mbps', '2010-01-30 18:42:19')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(1, NULL, '2010-01-30 18:42:19', 'Las estaciones de la red disponen de 10Mbps compartidos entre todas', '2010-01-30 18:42:19')[0m
+  [4;36;1mAnswer Create (0.3ms)[0m   [0;1mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(1, NULL, '2010-01-30 18:42:19', 'Las estaciones de la red gestionan su velocidad de acceso a la red', '2010-01-30 18:42:19')[0m
+  [4;35;1mAnswer Create (0.2ms)[0m   [0mINSERT INTO `answers` (`question_id`, `correct`, `created_at`, `title`, `updated_at`) VALUES(1, NULL, '2010-01-30 18:42:19', 'Las estaciones de la red con mayor prioridad disponende mayor ancho de banda', '2010-01-30 18:42:19')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 118ms (DB: 7) | 302 Found [http://0.0.0.0/test/create]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:42:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.9ms)
+Completed in 89ms (View: 52, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-30 19:42:23) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>"1", "answer"=>"4"}
+  [4;35;1mQuestion Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mAnswer Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.`id` = 4) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+Rendered test/_show (0.5ms)
+Completed in 80ms (View: 19, DB: 6) | 200 OK [http://0.0.0.0/test/correct]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:42:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.5ms)
+Completed in 88ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:42:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 103ms (View: 68, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:43:15) [POST]
+  Parameters: {"question_id"=>"1", "answer4"=>"Las estaciones de la red con mayor prioridad disponende mayor ancho de banda", "correct4"=>"", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>{"title"=>"En una red 10BaseT,"}, "answer1"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "answer2"=>"Las estaciones de la red disponen de 10Mbps compartidos entre todas", "answer3"=>"Las estaciones de la red gestionan su velocidad de acceso a la red"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 48ms (DB: 3) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:43:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.9ms)
+Completed in 87ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:43:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 104ms (View: 68, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:43:24) [POST]
+  Parameters: {"question_id"=>"1", "answer4"=>"Las estaciones de la red con mayor prioridad disponende mayor ancho de banda", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>{"title"=>"En una red 10Base T,"}, "answer1"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "answer2"=>"Las estaciones de la red disponen de 10Mbps compartidos entre todas", "answer3"=>"Las estaciones de la red gestionan su velocidad de acceso a la red"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Update (0.4ms)[0m   [0;1mUPDATE `questions` SET `updated_at` = '2010-01-30 18:43:24', `title` = 'En una red 10Base T,' WHERE `id` = 1[0m
+  [4;35;1mSQL (30.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 79ms (DB: 34) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:43:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.1ms)
+Completed in 96ms (View: 62, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:43:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.5ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 108ms (View: 68, DB: 8) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:44:02) [POST]
+  Parameters: {"question_id"=>"1", "answer4"=>"Las estaciones de la red con mayor prioridad disponende mayor ancho de banda", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>{"title"=>"En una red 10Base T,"}, "answer1"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "correct1"=>"", "answer2"=>"Las estaciones de la red disponen de 10Mbps compartidos entre todas", "answer3"=>"Las estaciones de la red gestionan su velocidad de acceso a la red"}
+  [4;36;1mQuestion Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 44ms (DB: 3) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:44:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (46.7ms)
+Completed in 87ms (View: 50, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:47:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 100ms (View: 66, DB: 4) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:47:48) [POST]
+  Parameters: {"question_id"=>"1", "answer4"=>"Las estaciones de la red con mayor prioridad disponende mayor ancho de banda", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>{"title"=>"En una red 10Base T,"}, "answer1"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "correct1"=>"", "answer2"=>"Las estaciones de la red disponen de 10Mbps compartidos entre todas", "answer3"=>"Las estaciones de la red gestionan su velocidad de acceso a la red"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.4ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:47:48', `title` = NULL WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.3ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:47:48', `title` = 'Cada una de las estaciones en la red dispone permanentemente de 10Mbps' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.2ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:47:48', `correct` = 1 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.4ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:47:48', `title` = 'Las estaciones de la red disponen de 10Mbps compartidos entre todas' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.3ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:47:48', `title` = 'Las estaciones de la red gestionan su velocidad de acceso a la red' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 107ms (DB: 12) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:47:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (50.3ms)
+Completed in 90ms (View: 54, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:47:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 102ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:47:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.2ms)
+Completed in 87ms (View: 51, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:48:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 101ms (View: 64, DB: 4) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:48:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.7ms)
+Completed in 88ms (View: 51, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:48:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 98ms (View: 63, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:50:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 114ms (View: 79, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:50:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 98ms (View: 63, DB: 4) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:50:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 99ms (View: 63, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:50:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (131.7ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (60.7ms)
+Completed in 237ms (View: 68, DB: 134) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:50:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 101ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:51:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 115ms (View: 78, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:52:16) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.3ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:16', `title` = 'Cada una de las estaciones en la red dispone permanentemente de 10Mbps' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.4ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:16', `correct` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.3ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:16', `title` = 'Las estaciones de la red disponen de 10Mbps compartidos todas' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.3ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:16', `title` = 'Las estaciones de la red gestionan su velocidad de acceso a la red' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (16.7ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:16', `title` = 'Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda' WHERE `id` = 4[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 135ms (DB: 39) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:52:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.5ms)
+Completed in 87ms (View: 51, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:52:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 107ms (View: 72, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:52:24) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 91ms (DB: 6) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:52:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.5ms)
+Completed in 88ms (View: 52, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:52:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 103ms (View: 67, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:52:52) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.3ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:52', `correct` = NULL WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.3ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:52:52', `correct` = NULL WHERE `id` = 2[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 109ms (DB: 9) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:52:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.7ms)
+Completed in 88ms (View: 51, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:52:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 102ms (View: 66, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:52:58) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 102ms (DB: 7) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:52:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.3ms)
+Completed in 90ms (View: 52, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:53:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 108ms (View: 71, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:53:18) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.3ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:18', `correct` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.4ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:18', `correct` = 0 WHERE `id` = 2[0m
+  [4;35;1mSQL (29.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.4ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:18', `correct` = 0 WHERE `id` = 3[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.5ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:18', `correct` = 0 WHERE `id` = 4[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 239ms (DB: 41) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:53:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.8ms)
+Completed in 87ms (View: 52, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:53:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 102ms (View: 67, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:53:22) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "correct1"=>"", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "correct2"=>"", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.9ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:22', `correct` = 1 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.4ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:22', `correct` = 1 WHERE `id` = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 111ms (DB: 9) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:53:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (50.5ms)
+Completed in 92ms (View: 55, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:53:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 105ms (View: 70, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:53:27) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.3ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:27', `correct` = 0 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.3ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:27', `correct` = 0 WHERE `id` = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 109ms (DB: 9) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:53:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (51.8ms)
+Completed in 92ms (View: 56, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:53:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 116ms (View: 74, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:53:32) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Update (0.4ms)[0m   [0mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:32', `correct` = 0 WHERE `id` = 1[0m
+  [4;36;1mSQL (16.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 126ms (DB: 25) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:53:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (1.6ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.9ms)
+Completed in 93ms (View: 53, DB: 6) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-30 19:53:34) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "question"=>"1", "answer"=>"1"}
+  [4;35;1mQuestion Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+Rendered test/_show (0.5ms)
+Completed in 81ms (View: 21, DB: 5) | 200 OK [http://0.0.0.0/test/correct]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:53:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 103ms (View: 67, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:53:39) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Update (0.3ms)[0m   [0;1mUPDATE `answers` SET `updated_at` = '2010-01-30 18:53:39', `correct` = 1 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 106ms (DB: 8) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:53:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (48.4ms)
+Completed in 87ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:54:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 179ms (View: 143, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 19:54:27) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 110ms (DB: 8) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 19:54:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (51.3ms)
+Completed in 92ms (View: 55, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:54:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 118ms (View: 82, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:55:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 113ms (View: 78, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:55:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 106ms (View: 65, DB: 6) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:59:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 119ms (View: 80, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:59:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 110ms (View: 66, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:59:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 192ms (View: 80, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:59:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 100ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 19:59:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 120ms (View: 84, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 20:00:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 115ms (View: 77, DB: 5) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 20:00:47) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T,sdm,n"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;36;1mQuestion Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (1.2ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Update (0.3ms)[0m   [0mUPDATE `questions` SET `updated_at` = '2010-01-30 19:00:47', `title` = 'En una red 10Base T,sdm,n' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 107ms (DB: 10) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:00:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (47.8ms)
+Completed in 87ms (View: 51, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#edit_question (for 127.0.0.1 at 2010-01-30 20:00:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (5.6ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (1.1ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/edit_question
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Completed in 108ms (View: 67, DB: 9) | 200 OK [http://0.0.0.0/test/edit_question/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#update_question (for 127.0.0.1 at 2010-01-30 20:00:53) [POST]
+  Parameters: {"question_id"=>"1", "commit"=>"actualizar", "authenticity_token"=>"KoCe2Vvbk4rQ3hZxjN5CzcpAgZeYSIH6qXK0ApxMRP0=", "answer0"=>"Cada una de las estaciones en la red dispone permanentemente de 10Mbps", "question"=>{"title"=>"En una red 10Base T"}, "correct0"=>"", "answer1"=>"Las estaciones de la red disponen de 10Mbps compartidos  todas", "answer2"=>"Las estaciones de la red gestionan su velocidad de acceso a la red", "answer3"=>"Las estaciones de la red con mayor prioridad disponen de mayor ancho de banda"}
+  [4;35;1mQuestion Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Update (0.3ms)[0m   [0;1mUPDATE `questions` SET `updated_at` = '2010-01-30 19:00:53', `title` = 'En una red 10Base T' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/1
+Completed in 184ms (DB: 8) | 302 Found [http://0.0.0.0/test/update_question]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-30 20:00:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_show (51.7ms)
+Completed in 93ms (View: 55, DB: 5) | 200 OK [http://0.0.0.0/test/show/1]
