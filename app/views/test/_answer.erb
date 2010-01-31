@@ -1,0 +1,19 @@
+<% if @question %>
+<div class="span-24 last">
+  <% form_for :question, :url => { :controller => "test", :action => "correct" } do |f| %>
+    <%= hidden_field_tag 'question', @question.id %>
+    <ul class="clean_list">
+      <h3>#<%= @question.id %> </h3>
+      <strong><%= @question.title %></strong> (<%= link_to_edit(@question) %>)<br/>
+      <% @question.answers.each_with_index  do |a,i| %>
+        <li>
+          <%= radio_button_tag "answer", a.id %>
+          <%= a.title %>
+        </li>
+      <% end -%>
+    </ul>
+
+    <%= submit_tag "corregir" %>
+  <% end -%>
+</div>
+<% end -%>

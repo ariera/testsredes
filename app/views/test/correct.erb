@@ -1,22 +1,6 @@
 
-
-
-<ol class="test">
-  <h3>#<%= @question_answered.id %> </h3>
-  <strong><%= @question_answered.title %></strong> (<%= link_to_edit(@question_answered) %>)<br/>
-  <% @question_answered.answers.each  do |a| %>
-  <% if a.correct? %>
-    <li class="correct">
-  <% elsif a == @marked_answer && a.incorrect? %>
-    <li class="wrong">
-  <%  else %>
-    <li>
-  <%  end -%>
-      <%= a.title %> <%= "*" if a.correct? %>
-    </li>
-  <% end -%>
-</ol>
+<%= render :partial => "show" %>
 
 <hr/>
 
-<%= render :partial => "show" %>
+<%= render :partial => "answer" %>

@@ -7,7 +7,12 @@
   <body>
     <div class="container">
       <div id="header" class="span-24 last">
-        <div class="span-20"><h1>Teoría de Redes</h1></div>
+        <div class="span-4 ">
+          <ul class="clean_list">
+            <li><%= link_to "Empieza!", :controller => :test, :action => :show, :id => 1 %></li>
+          </ul>
+        </div>
+        <div class="span-16"><h1>Teoría de Redes</h1></div>
         <div class="span-4 last"> <%= link_to "nueva", :controller => :test, :action => :new %></div>
       </div>
       <div class="span-24 last">

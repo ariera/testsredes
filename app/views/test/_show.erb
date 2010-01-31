@@ -1,17 +1,42 @@
-<% if @question %>
-  <% form_for :question, :url => { :controller => "test", :action => "correct" } do |f| %>
-    <%= hidden_field_tag 'question', @question.id %>
-    <ul class="clean_list">
-      <h3>#<%= @question.id %> </h3>
-      <strong><%= @question.title %></strong> (<%= link_to_edit(@question) %>)<br/>
-      <% @question.answers.each_with_index  do |a,i| %>
-        <li>
-          <%= radio_button_tag "answer", a.id %>
-          <%= a.title %>
-        </li>
-      <% end -%>
-    </ul>
 
-    <%= submit_tag "corregir" %>
+<div class="prepend-10 append-10 span-4 last">
+  <% if @marked_answer %>
+    <%if @marked_answer.correct? %>
+      <span class="correct">¡CORRECTO!</span>
+    <% else %>
+      <span class="wrong">¡FALSO!</span>
+    <% end %>
+  <% else %>
+      ¡EMPIEZA!
+  <% end %>
+</div>
+<div class="span-24 last">
+<ol class="test">
+  <h3>#<%= @question_answered.id %> </h3>
+  <strong><%= @question_answered.title %></strong> (<%= link_to_edit(@question_answered) %>)<br/>
+  <% @question_answered.answers.each  do |a| %>
+  <% if a.correct? %>
+    <li class="correct">
+  <% elsif a == @marked_answer && a.incorrect? %>
+    <li class="wrong">
+  <%  else %>
+    <li>
+  <%  end -%>
+      <%= a.title %> <%= "*" if a.correct? %>
+    </li>
   <% end -%>
-<% end -%>
+</ol>
+</div>
+<div class="prepend-8 span-16 last">
+  <h6>Comentarios: </h6>
+  <% @question_answered.comments.each do |c| %>
+    <div class="comment">
+      <%= c.title.gsub("\r\n", "<br/>") %>
+    </div>
+  <%  end %>
+  <% form_for :comment, :url => {:controller => "test", :action => "add_comment"} do |f| %>
+    <%= hidden_field_tag :question_answered_id, @question_answered.id %>
+    <%= f.text_area :title, :style => "height:45px" %><br/>
+    <%= submit_tag "comenta" %>
+  <%  end %>
+</div>

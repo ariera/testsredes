@@ -24,11 +24,11 @@ ol.test {list-style-type: lower-alpha;}
 
 #header {text-align: center; background-color: #E9E9FF; border-bottom: 2px solid black;}
 #header h1 h2{display:inline;float:left}
-li.correct{background-color: #FFF680}
-li.wrong{background-color: #BF8F60}
+.correct{background-color: #FFF680}
+.wrong{background-color: #BF8F60}
 
 h3 {padding:0px; margin: 0px; display:inline}
-
+.comment{background-color: #FFFBBF; border-bottom: 1px solid #BFB960; margin-bottom: 4px;}
 /*
 azules
 #C9C8FF

@@ -17,6 +17,9 @@
   <%= text_field_tag :answer4, '', :size => 58 %>
   <%= check_box_tag 'correct4' %>
   </p>
+  <p> Comentario:
+  <%= text_area_tag :comment, "", :style=> "height:45px" %>
+  </p>
   <%= submit_tag "crear" %>
 
 <% end %>
