@@ -8877,3 +8877,104 @@ Rendering test/show
   [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
 Rendered test/_answer (48.1ms)
 Completed in 93ms (View: 56, DB: 5) | 200 OK [http://0.0.0.0/test/show/5]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-31 14:09:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mQuestion Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mAnswer Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendered test/_answer (873.8ms)
+Completed in 1171ms (View: 921, DB: 6) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-31 14:09:55) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"SpRmw+zrAYKi5p2DVNLewprHjLy4RxrELoQOfdJUqgg=", "question"=>"1", "answer"=>"1"}
+  [4;36;1mQuestion Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+  [4;36;1mAnswer Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.question_id = 1) [0m
+Rendered test/_show (74.7ms)
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 2) [0m
+Rendered test/_answer (88.6ms)
+Completed in 266ms (View: 198, DB: 6) | 200 OK [http://0.0.0.0/test/correct]
+  [4;35;1mSQL (25.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-31 14:48:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (19.8ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_answer (47.7ms)
+Completed in 111ms (View: 54, DB: 48) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-31 14:48:06) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question"=>"1"}
+  [4;35;1mQuestion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Answer without an ID):
+  app/controllers/test_controller.rb:45:in `correct'
+
+Rendered rescues/_trace (207.8ms)
+Rendered rescues/_request_and_response (5.5ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-31 14:48:28) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question"=>"1"}
+  [4;35;1mQuestion Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Answer without an ID):
+  app/controllers/test_controller.rb:45:in `correct'
+
+Rendered rescues/_trace (219.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-31 14:49:00) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question"=>"1"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.question_id = 1) [0m
+Rendered test/_show (175.9ms)
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 2) [0m
+Rendered test/_answer (19.5ms)
+Completed in 250ms (View: 204, DB: 6) | 200 OK [http://0.0.0.0/test/correct]

@@ -42,7 +42,7 @@ class TestController < ApplicationController
   def correct
     @question_answered = Question.find(params[:question])
     @question = @question_answered.next
-    @marked_answer = Answer.find(params[:answer])
+    @marked_answer = Answer.find(params[:answer]) if params[:answer]
   end
 
   def add_comment
