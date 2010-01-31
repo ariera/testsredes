@@ -8,7 +8,7 @@
       <% @question.answers.each_with_index  do |a,i| %>
         <li>
           <%= radio_button_tag "answer", a.id %>
-          <%= a.title %>
+          <label for="answer_<%= a.id %>"><%= a.title %> </label>
         </li>
       <% end -%>
     </ul>

@@ -29,6 +29,7 @@ ol.test {list-style-type: lower-alpha;}
 
 h3 {padding:0px; margin: 0px; display:inline}
 .comment{background-color: #FFFBBF; border-bottom: 1px solid #BFB960; margin-bottom: 4px;}
+label {font-weight: normal}
 /*
 azules
 #C9C8FF
