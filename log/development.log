@@ -9062,3 +9062,255 @@ Rendering test/show
   [4;36;1mAnswer Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
 Rendered test/_answer (47.4ms)
 Completed in 92ms (View: 54, DB: 5) | 200 OK [http://0.0.0.0/test/show/5]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-31 16:13:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQuestion Columns (110.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (10.5ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (5.6ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_answer (68.1ms)
+Completed in 237ms (View: 75, DB: 127) | 200 OK [http://0.0.0.0/test/show/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-01-31 21:29:50) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question"=>"1"}
+  [4;35;1mQuestion Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 2) LIMIT 1[0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 1) [0m
+  [4;36;1mAnswer Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mComment Load (1.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.question_id = 1) [0m
+Rendered test/_show (109.0ms)
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 2) [0m
+Rendered test/_answer (29.0ms)
+Completed in 276ms (View: 146, DB: 7) | 200 OK [http://0.0.0.0/test/correct]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-01-31 21:29:56) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;36;1mAnswer Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_answer (59.8ms)
+Completed in 104ms (View: 66, DB: 5) | 200 OK [http://0.0.0.0/test/show/16]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-02-01 16:08:38) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question"=>"16", "answer"=>"64"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.6ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 17) LIMIT 1[0m
+  [4;36;1mQuestion Load (1.9ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 17) [0m
+  [4;35;1mAnswer Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.`id` = 64) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;35;1mAnswer Load (0.5ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.question_id = 16) [0m
+  [4;35;1mComment Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered test/_show (53.2ms)
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 17) [0m
+Rendered test/_answer (19.8ms)
+Completed in 159ms (View: 80, DB: 11) | 200 OK [http://0.0.0.0/test/correct]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:08:40) [POST]
+  Parameters: {"comment"=>{"title"=>"mnbmn"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/test_controller.rb:49:in `add_comment'
+
+Rendered rescues/_trace (240.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:09:21) [POST]
+  Parameters: {"comment"=>{"title"=>"mnbmn"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/test_controller.rb:49:in `add_comment'
+
+Rendered rescues/_trace (283.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:09:26) [POST]
+  Parameters: {"comment"=>{"title"=>"mnbmn"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/test_controller.rb:49:in `add_comment'
+
+Rendered rescues/_trace (205.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:10:13) [POST]
+  Parameters: {"comment"=>{"title"=>"mnbmn"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+  [4;35;1mQuestion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;35;1mComment Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO `comments` (`question_id`, `created_at`, `title`, `updated_at`) VALUES(16, '2010-02-01 15:10:13', 'mnbmn', '2010-02-01 15:10:13')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/16
+Completed in 74ms (DB: 5) | 302 Found [http://0.0.0.0/test/add_comment]
+  [4;35;1mSQL (1.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-02-01 16:10:13) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mQuestion Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;36;1mAnswer Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_answer (50.1ms)
+Completed in 96ms (View: 57, DB: 6) | 200 OK [http://0.0.0.0/test/show/16]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-02-01 16:10:17) [POST]
+  Parameters: {"commit"=>"corregir", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question"=>"16", "answer"=>"64"}
+  [4;35;1mQuestion Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 17) LIMIT 1[0m
+  [4;36;1mQuestion Load (1.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 17) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.`id` = 64) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;36;1mComment Load (0.7ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.question_id = 16) [0m
+  [4;35;1mComment Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered test/_show (57.0ms)
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 17) [0m
+Rendered test/_answer (22.9ms)
+Completed in 156ms (View: 86, DB: 10) | 200 OK [http://0.0.0.0/test/correct]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:10:20) [POST]
+  Parameters: {"comment"=>{"title"=>"mbh"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;35;1mComment Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO `comments` (`question_id`, `created_at`, `title`, `updated_at`) VALUES(16, '2010-02-01 15:10:20', 'mbh', '2010-02-01 15:10:20')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/show/16
+Completed in 74ms (DB: 6) | 302 Found [http://0.0.0.0/test/add_comment]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#show (for 127.0.0.1 at 2010-02-01 16:10:20) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mQuestion Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+Rendering template within layouts/basic
+Rendering test/show
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;36;1mAnswer Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+Rendered test/_answer (131.6ms)
+Completed in 177ms (View: 138, DB: 5) | 200 OK [http://0.0.0.0/test/show/16]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:10:53) [POST]
+  Parameters: {"comment"=>{"title"=>"mbh"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+  [4;35;1mQuestion Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;35;1mComment Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO `comments` (`question_id`, `created_at`, `title`, `updated_at`) VALUES(16, '2010-02-01 15:10:53', 'mbh', '2010-02-01 15:10:53')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/correct?question=16
+Completed in 77ms (DB: 6) | 302 Found [http://0.0.0.0/test/add_comment]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-02-01 16:10:53) [GET]
+  Parameters: {"question"=>"16"}
+  [4;35;1mQuestion Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 17) LIMIT 1[0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 17) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;35;1mAnswer Load (0.5ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;36;1mAnswer Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mComment Load (0.8ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.question_id = 16) [0m
+  [4;36;1mComment Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered test/_show (83.8ms)
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.question_id = 17) [0m
+Rendered test/_answer (22.2ms)
+Completed in 163ms (View: 112, DB: 10) | 200 OK [http://0.0.0.0/test/correct?question=16]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#add_comment (for 127.0.0.1 at 2010-02-01 16:10:57) [POST]
+  Parameters: {"comment"=>{"title"=>",m"}, "commit"=>"comenta", "authenticity_token"=>"VPa43RzTXS9bqQLDK1oksw0qQj9ALfD2D5Emsv5FVN8=", "question_answered_id"=>"16"}
+  [4;36;1mQuestion Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;36;1mComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO `comments` (`question_id`, `created_at`, `title`, `updated_at`) VALUES(16, '2010-02-01 15:10:57', ',m', '2010-02-01 15:10:57')[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/test/correct?question=16
+Completed in 93ms (DB: 26) | 302 Found [http://0.0.0.0/test/add_comment]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestController#correct (for 127.0.0.1 at 2010-02-01 16:10:57) [GET]
+  Parameters: {"question"=>"16"}
+  [4;36;1mQuestion Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 16) [0m
+  [4;36;1mQuestion Load (0.2ms)[0m   [0;1mSELECT `questions`.id FROM `questions` WHERE (`questions`.`id` = 17) LIMIT 1[0m
+  [4;35;1mQuestion Load (0.2ms)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 17) [0m
+Rendering template within layouts/basic
+Rendering test/correct
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 16) [0m
+  [4;35;1mAnswer Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.question_id = 16) [0m
+  [4;35;1mComment Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered test/_show (75.1ms)
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM `answers` WHERE (`answers`.question_id = 17) [0m
+Rendered test/_answer (19.9ms)
+Completed in 147ms (View: 100, DB: 8) | 200 OK [http://0.0.0.0/test/correct?question=16]

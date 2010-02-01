@@ -46,9 +46,9 @@ class TestController < ApplicationController
   end
 
   def add_comment
-    qu=Question.find(params[:question_id])
+    qu=Question.find(params[:question_answered_id])
     qu.comments << Comment.new(params[:comment])
-    redirect_to :action => :show, :id => qu.id
+    redirect_to :action => :correct, :question => qu.id
   end
 
 end
