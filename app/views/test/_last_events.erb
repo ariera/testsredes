@@ -1,0 +1,9 @@
+
+<ul class="clean_list">
+  <% Notification.all(:limit => 5, :order => "created_at DESC").each do |n| %>
+  <li>
+    <p class="event_title"><a href="#"><%= n.title %> <span class="date"><%= format(n.created_at) %></span></a></p>
+    <p class="digest quiet"><%= truncate(n.question.title, :length => 100) %></p>
+  </li>
+  <% end %>
+</ul>

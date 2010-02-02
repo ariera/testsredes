@@ -6,11 +6,9 @@
     <% else %>
       <span class="wrong">¡FALSO!</span>
     <% end %>
-  <% else %>
-      ¡EMPIEZA!
   <% end %>
 </div>
-<div class="span-24 last">
+<div class="span-18 last">
 <ol class="test">
   <h3>#<%= @question_answered.id %> </h3>
   <strong><%= @question_answered.title %></strong> (<%= link_to_edit(@question_answered) %>)<br/>
@@ -27,7 +25,7 @@
   <% end -%>
 </ol>
 </div>
-<div class="prepend-8 span-16 last">
+<div class="prepend-8 span-11 last">
   <h6>Comentarios: </h6>
   <% @question_answered.comments.each do |c| %>
     <div class="comment">

@@ -22,14 +22,21 @@ ul.horizontal_clean_list li                                           {float:lef
 
 ol.test {list-style-type: lower-alpha;}
 
-#header {text-align: center; background-color: #E9E9FF; border-bottom: 2px solid black;}
-#header h1 h2{display:inline;float:left}
+#header {text-align: center; background-color: #E9E9FF; border-bottom: 2px solid #6E6CBF;}
 .correct{background-color: #FFF680}
 .wrong{background-color: #BF8F60}
 
 h3 {padding:0px; margin: 0px; display:inline}
 .comment{background-color: #FFFBBF; border-bottom: 1px solid #BFB960; margin-bottom: 4px;}
 label {font-weight: normal}
+#last_events {width:185px; padding-left: 0px; border-left: 1px dotted #6E6CBF}
+#last_events .date{font-size:.8em;margin-bottom:1.875em;line-height:1.875em; color: #BBB}
+#last_events ul li {border:0px; margin:0px; padding: 0px;}
+#last_events a {color:#EEE; text-decoration:underline}
+#last_events .heading {text-align:center; padding-top: 10px;}
+#last_events .event_title{font-weight: bold; padding:0px 4px; margin:0px;background-color:#6E6CBF;}
+#last_events .digest{background-color: #E9E9FF; padding: 4px; }
+
 /*
 azules
 #C9C8FF

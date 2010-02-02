@@ -12,4 +12,7 @@ module ApplicationHelper
     stylesheet_link_tag("basic.css")
   end
 
+   def format(date)
+    date.strftime("%d/%m/%Y")
+  end
 end

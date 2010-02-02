@@ -1,6 +1,10 @@
 
 class TestController < ApplicationController
 
+  def index
+    @questions = Question.all
+  end
+
   def show
     @question = Question.find(params[:id])
   end
@@ -51,4 +55,10 @@ class TestController < ApplicationController
     redirect_to :action => :correct, :question => qu.id
   end
 
+  def search
+    escaped_query =  params[:query].gsub('%', '\%').gsub('_', '\_')
+    questions = Question.find(:all, :conditions => ["title LIKE ?", "%#{escaped_query}%"])
+    answers = Answer.find(:all, :conditions => ["title LIKE ?", "%#{escaped_query}%"]).map(&:question)
+    @questions = (questions + answers).uniq
+  end
 end

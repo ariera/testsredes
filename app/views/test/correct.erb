@@ -1,6 +1,4 @@
 
 <%= render :partial => "show" %>
 
-<hr/>
-
-<%= render :partial => "answer" %>
+<%= render :partial => "question", :locals => {:question => @question} %>

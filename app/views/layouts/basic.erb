@@ -9,14 +9,23 @@
       <div id="header" class="span-24 last">
         <div class="span-4 ">
           <ul class="clean_list">
-            <li><%= link_to "Empieza!", :controller => :test, :action => :show, :id => 1 %></li>
+            <li><%= link_to "Empieza!", :controller => :test %></li>
+            <li><strong style="text-align: right;"><%= link_to "Nueva pregunta", :controller => :test, :action => :new %></strong></li>
+            <li class="quiet"> ariera@gmail.com</li>
           </ul>
         </div>
-        <div class="span-16"><h1>Teoría de Redes</h1></div>
-        <div class="span-4 last"> <%= link_to "nueva", :controller => :test, :action => :new %></div>
+        <div class="span-14"><h1>Teoría de Redes</h1></div>
+        <div class="span-6 last">
+          <p>
+          <%= render :partial => "search_form" %>
+          </p>
+        </div>
       </div>
-      <div class="span-24 last">
+      <div class="span-19">
         <%= yield %>
+      </div>
+      <div  id="last_events" class="span-4 last">
+        <%= render :partial => "last_events" %>
       </div>
     </div>
   </body>
